@@ -1,13 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import {Texto, Paragraph} from './Texto';
+import {list} from './helper';
 
 function App() {
+  function handleClick(task){
+    return
+  }
   return (
     <div>
-      <h1>Bolas</h1>
-      <Texto></Texto>
-      <Paragraph></Paragraph>
+     {list.map(function(task){
+      return (
+      <div className='box'onClick={function(){
+        return handleClick(task)
+      }}>
+        <h2>{task.name}</h2>
+        <h2>{task.checked ? 'realizada':'no realizado'}</h2>
+      </div>)
+     })}
     </div>
   );
 }
